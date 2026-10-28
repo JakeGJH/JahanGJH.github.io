@@ -123,7 +123,7 @@
     return true;
   }
 
-  fetch(new URL("assets/data/media.json", document.baseURI))
+  fetch(new URL("assets/data/media.json", document.baseURI), { cache: "no-cache" })
     .then(response => {
       if (!response.ok) throw new Error("Media manifest unavailable");
       return response.json();
