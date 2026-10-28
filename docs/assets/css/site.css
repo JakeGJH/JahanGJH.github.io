@@ -1,41 +1,129 @@
-/* Personal content and accessibility refinements; layout is from the template. */
+/* University of Houston red adaptation of Hanchao Zhang's Minimal Light layout. */
+/* UH red, Brick and Chocolate follow the official UH Brand Style Guide. */
+:root {
+  --uh-red: #c8102e;
+  --uh-brick: #960c22;
+  --uh-chocolate: #640817;
+  --accent: #c8102e;
+  --accent-hover: #960c22;
+  --accent-soft: #c8102e;
+  --accent-rgb: 200, 16, 46;
+  --surface-tint: #ffffff;
+  --page-bg: #ffffff;
+  --surface: #ffffff;
+  --surface-rgb: 255, 255, 255;
+  --text: #222222;
+  --muted: #54585a;
+  --line: #e5e5e5;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
 html { scroll-behavior: smooth; }
-header .portrait { display: block; overflow: hidden; width: 190px; height: 190px; border-radius: 50%; border: 3px solid #9c66b7; margin: 0 auto 18px; box-shadow: 0 0 0 5px rgba(87, 6, 140, .06); }
+body { background: var(--page-bg); color: var(--text); }
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+strong, section h2 { color: var(--text); }
+#vanta-bg {
+  --corner-width: clamp(0px, calc((100vw - 960px) / 2 - 24px), 180px);
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #ffffff;
+  /* Every visible fragment stays inside the empty side gutters. */
+  -webkit-mask-image:
+    radial-gradient(ellipse var(--corner-width) 180px at left top, #000 15%, transparent 95%),
+    radial-gradient(ellipse var(--corner-width) 180px at right top, #000 15%, transparent 95%),
+    radial-gradient(ellipse var(--corner-width) 180px at left bottom, #000 15%, transparent 95%),
+    radial-gradient(ellipse var(--corner-width) 180px at right bottom, #000 15%, transparent 95%);
+  mask-image:
+    radial-gradient(ellipse var(--corner-width) 180px at left top, #000 15%, transparent 95%),
+    radial-gradient(ellipse var(--corner-width) 180px at right top, #000 15%, transparent 95%),
+    radial-gradient(ellipse var(--corner-width) 180px at left bottom, #000 15%, transparent 95%),
+    radial-gradient(ellipse var(--corner-width) 180px at right bottom, #000 15%, transparent 95%);
+}
+#vanta-bg canvas { display: block; opacity: .38; transform: scale(1.5); }
+@media (max-width: 1199px) {
+  #vanta-bg { display: none; }
+}
+.wrapper { position: relative; z-index: 1; }
+.stats-watermark { top: 0; height: 100%; }
+header .portrait { display: block; overflow: hidden; width: 190px; height: 190px; border-radius: 50%; border: 3px solid var(--accent-soft); margin: 0 auto 18px; box-shadow: 0 0 0 5px rgba(var(--accent-rgb), .06); }
 header .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(2.2); transform-origin: 50% 17%; border: 0; border-radius: 0; }
+header h1 { background-image: linear-gradient(90deg, var(--uh-chocolate), var(--accent)); animation: none; }
 header .position { font-size: 1.05rem; line-height: 1.5; margin: 8px 0; }
 header p { margin: 10px 0; }
 header .email { font-size: .9rem; overflow-wrap: anywhere; }
+.institution-link { color: var(--uh-red); }
 .social-icons { margin: 18px 0 8px; }
+.social-icons a { color: var(--accent) !important; }
+.social-icons a:hover { color: var(--accent-hover) !important; }
 .section-nav { font-size: .85rem; margin: 8px 0 18px; }
-.edu-list ul, .research-interests ul { mask-image: none; -webkit-mask-image: none; }
-.edu-list .yr { color: #6b6275; }
-.container-flex { margin: 26px 0 28px; }
-.research-interests ul { justify-content: flex-start; }
-.timeline-container { margin: 24px 0 30px; }
-.timeline-line { height: calc(100% - 105px); }
+.beyond-link, .beyond-link:hover { color: var(--on-accent); }
+.container-flex { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; margin: 26px 0 28px; }
+.edu-list, .research-interests { min-width: 0; }
+.edu-list ul, .research-interests ul { display: block; mask-image: none; -webkit-mask-image: none; }
+.edu-list .yr, .edu-list .deg, .entry-content div { color: var(--muted); }
+.edu-list .school a { color: var(--text); }
+.edu-list .school a:hover, .edu-list .deg a { color: var(--accent); }
+.edu-list li, .research-interests ul li { background: rgba(var(--accent-rgb), .045); }
+.edu-list li.l1 { background: rgba(var(--accent-rgb), .075); }
+.research-list { list-style: none; margin: 0; padding: 0; }
+.research-card { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.research-card:first-child { padding-top: 4px; }
+.research-card:last-child { border-bottom: 0; }
+.research-copy { flex: 1; min-width: 0; }
+.research-card h3 { margin: 0 0 7px; font-size: 1.12rem; line-height: 1.35; }
+.research-card p { margin: 6px 0; }
+.research-meta { color: var(--muted); font-size: .92rem; line-height: 1.5; }
+.research-status { display: inline-block; padding: 2px 8px; margin: 2px 6px 4px 0; border: 1px solid var(--line); border-radius: 4px; background: var(--surface-tint); color: var(--accent); font-size: .8rem; line-height: 1.5; font-weight: 600; }
+.research-media { flex: 0 0 170px; width: 170px; margin: 0; }
+.research-media img { display: block; width: 100%; height: auto; max-height: 230px; object-fit: contain; border: 1px solid var(--line); border-radius: 5px; background: var(--surface); }
+.research-media figcaption { color: var(--muted); font-size: .8rem; margin-top: 5px; }
+.research-media:empty, .research-media[hidden] { display: none; }
+.year-circle::before { display: none; }
 .publication-text { width: 100%; padding: 4px 0 20px; }
 .publications ol.bibliography { padding-left: 0; }
 .publications ol.bibliography li { margin-bottom: 12px; }
 .publication-text .author, .publication-text .periodical { margin-top: 5px; }
-.theme-credit { margin-top: 42px; }
-.skip-link { position: absolute; top: -100px; left: 12px; z-index: 9999; padding: 8px 12px; background: white; }
+.publications ol.bibliography li .links a.btn:hover { color: var(--on-accent) !important; }
+.theme-credit { margin-top: 42px; color: var(--muted); }
+.life-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 20px 0; }
+.life-gallery:empty, .life-gallery[hidden] { display: none; }
+.life-gallery figure { min-width: 0; margin: 0; }
+.life-gallery figure img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); }
+.life-gallery figcaption { color: var(--muted); margin-top: 6px; font-size: .9rem; }
+.skip-link { position: absolute; top: -100px; left: 12px; z-index: 9999; padding: 8px 12px; background: var(--surface); }
 .skip-link:focus { top: 8px; }
-a:focus-visible { outline: 2px solid #9c27b0; outline-offset: 4px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 960px) {
-  .edu-list, .research-interests { min-width: 0; flex-basis: 100%; }
-  .container-flex { gap: 18px; }
-}
-@media (max-width: 600px) {
-  .wrapper { overflow-wrap: anywhere; }
-  .entry-content { padding: 10px; }
-  header .portrait { width: 170px; height: 170px; }
+  .container-flex { gap: 22px; }
   .stats-watermark { display: none; }
 }
-@media (prefers-color-scheme: dark) {
-  .edu-list .yr { color: #c5b9d0; }
-  .skip-link { background: #16161a; }
+@media (max-width: 600px) {
+  .container-flex { gap: 20px; }
+  .research-card { gap: 14px; }
+  .research-media { flex-basis: 120px; width: 120px; }
 }
+@media (max-width: 600px) {
+  .container-flex { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .wrapper { overflow-wrap: anywhere; }
+  header .portrait { width: 170px; height: 170px; }
+  .stats-watermark { display: none; }
+  .research-card { flex-direction: column; }
+  .research-media { flex-basis: auto; width: 100%; max-width: 280px; }
+  .research-media img { max-height: 280px; }
+  .life-gallery { grid-template-columns: minmax(0, 1fr); }
+}
+@media (min-width: 961px) and (max-height: 760px) {
+  header { max-height: calc(100vh - 28px); overflow-y: auto; padding-top: 20px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  #vanta-bg { display: none; }
 }
