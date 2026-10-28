@@ -76,6 +76,10 @@ header .email { font-size: 14px; font-family: "Ubuntu Mono", monospace; color: #
 .edu-list li, .research-interests ul li { background: rgba(var(--accent-rgb), .03); }
 .edu-list li.l1 { background: rgba(var(--accent-rgb), .06); }
 .research-heading { margin: 2px 0 -15px; }
+.presentation-subheading { margin: 26px 0 0; font-size: 1.15rem; font-weight: 500; }
+.supporting-list { margin: 0 0 28px; padding-left: 20px; list-style-type: disc; }
+.supporting-list > li { margin-bottom: 14px; }
+.supporting-list .research-meta { margin: 3px 0; }
 .research-list { list-style: none; padding: 0; }
 .research-card { display: block; }
 .research-copy { position: relative; padding: 0 15px 0 20px; min-width: 0; }
