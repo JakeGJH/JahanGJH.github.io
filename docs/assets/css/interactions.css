@@ -1,0 +1,55 @@
+/* Adapt the reference publication-card lift to the current research markup. */
+.research-card {
+  position: relative;
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  outline: 1px solid transparent;
+  outline-offset: 7px;
+  transition: transform .22s ease, box-shadow .22s ease, outline-color .22s ease;
+}
+
+.research-card h3 a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .16em;
+}
+
+.research-card:focus-within {
+  outline-color: rgba(var(--accent-rgb), .22);
+  box-shadow: 0 4px 18px rgba(var(--accent-rgb), .1);
+}
+
+.research-card h3 a:focus-visible,
+.research-card .research-link:focus-visible {
+  color: var(--accent-hover);
+  text-decoration-line: underline;
+}
+
+/* Keep pointer hover off touch screens, where hover can otherwise persist. */
+@media (hover: hover) and (pointer: fine) {
+  .research-card:hover {
+    transform: translateY(-2px);
+    outline-color: rgba(var(--accent-rgb), .18);
+    box-shadow: 0 5px 18px rgba(var(--accent-rgb), .12);
+  }
+
+  .research-card:hover h3 a,
+  .research-card .research-link:hover {
+    color: var(--accent-hover);
+    text-decoration-line: underline;
+  }
+
+  .research-card:focus-within {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-card,
+  .research-card:hover,
+  .research-card:focus-within {
+    transform: none;
+    transition: none;
+  }
+
+  .research-card a { transition: none; }
+}
