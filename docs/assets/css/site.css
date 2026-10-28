@@ -29,13 +29,24 @@ a:hover { color: var(--accent-hover); }
   overflow: hidden;
   pointer-events: none;
   background: #ffffff;
-  /* One continuous NET field; only its central reading ellipse is masked. */
-  -webkit-mask-image: radial-gradient(ellipse 46vw 80vh at 50% 50%, transparent 100%, #000 115%);
-  mask-image: radial-gradient(ellipse 46vw 80vh at 50% 50%, transparent 100%, #000 115%);
+  /* Keep one continuous field, with a narrower ellipse and a soft eased fade. */
+  --net-mask: radial-gradient(ellipse 34vw 80vh at 50% 50%,
+    transparent 80%, rgba(0, 0, 0, .104) 90%, rgba(0, 0, 0, .352) 100%,
+    rgba(0, 0, 0, .648) 110%, rgba(0, 0, 0, .896) 120%, #000 130%);
+  -webkit-mask-image: var(--net-mask);
+  mask-image: var(--net-mask);
 }
 #vanta-bg canvas { display: block; opacity: .65; }
-@media (max-width: 1199px) {
-  #vanta-bg { display: none; }
+@media (max-width: 960px) {
+  #vanta-bg {
+    /* About 0.5 cm at each edge, fading before the reading area. */
+    --net-mask: linear-gradient(90deg,
+      #000 .35cm, rgba(0, 0, 0, .896) .38cm, rgba(0, 0, 0, .648) .41cm,
+      rgba(0, 0, 0, .352) .44cm, rgba(0, 0, 0, .104) .47cm, transparent .5cm,
+      transparent calc(100% - .5cm), rgba(0, 0, 0, .104) calc(100% - .47cm),
+      rgba(0, 0, 0, .352) calc(100% - .44cm), rgba(0, 0, 0, .648) calc(100% - .41cm),
+      rgba(0, 0, 0, .896) calc(100% - .38cm), #000 calc(100% - .35cm));
+  }
 }
 .wrapper { position: relative; z-index: 1; }
 .stats-watermark { top: 0; height: 100%; color: var(--accent); }
