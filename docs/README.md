@@ -20,9 +20,28 @@ If a whole-domain Google Search Console removal was submitted, cancel it once th
 
 ## Adding research and personal images
 
-Store approved images in `docs/assets/img/` and update `assets/data/media.json`. Text remains in the HTML, so papers and accepted posters remain readable without JavaScript. Empty image fields do not create placeholder boxes.
+Store approved images in `docs/assets/img/` and update `assets/data/media.json`. Text remains in the HTML, so papers, research and presentations remain readable without JavaScript. Research covers use a uniform 16:10 frame with `object-fit: contain`, preserving the whole figure. Missing or failed research images use `assets/img/covers/blank-cover.svg`; the frame and venue badge remain available for later replacement. Images load lazily after their containers enter layout.
 
-The `research` object has one entry for the published article and one for each presentation. Keep these IDs unchanged: `utilities-policy-2026`, `trb-27-01161`, `trb-27-01159`, `trb-27-01160`, `trb-27-01162`, `uss-2023`, and `isets-2023`. Set `src`, `alt`, and optional `caption`. The original thumbnail, shadow, rounded corners and top-left `abbr.badge` are retained. `badge` controls the visible journal/conference label; `badgeTitle` supplies its full-name tooltip. Thumbnails use the original cover crop; clicking opens `href`, or the original `src` when `href` is empty.
+The `research` object has one entry for each published article, research project and presentation. Keep its IDs matched to the HTML `data-media-id` values. Set `src`, `alt`, and optional `caption`. The original thumbnail shadow, rounded corners and top-left `abbr.badge` are retained. `badge` controls the visible journal/conference label; `badgeTitle` supplies its full-name tooltip, including “Target” for unsubmitted projects. Clicking opens `href`, or the cover image when `href` is empty. Current project images open only the images; no private manuscript, slide deck or PDF is deployed.
+
+The eight selected covers are copied unchanged from the approved figures. The TR-B framework retains the credit “Icons by Magnific, Special Flat.” ([icon source](https://www.magnific.com/author/magnific/icons/special-flat_8)). The CYBER-CARE cover is the Houston subnetwork map embedded in the actual presentation. The six conference entries without verified version-specific artwork retain blank covers.
+
+## Research and presentation versions
+
+Only the published Utilities Policy article appears under Publications. The Research section contains journal manuscripts and ongoing projects, with statuses confirmed by the owner on October 28, 2026:
+
+| ID | Journal or target | Status |
+| --- | --- | --- |
+| `tre-cyber-resilience` | Transportation Research Part E | Under review |
+| `crime-beryl` | Applied Geography | Submitted after revision |
+| `tra-campus-travel` | Target: Transportation Research Part A | In final preparation |
+| `trb-priority-reversals` | Target: Transportation Research Part B | In final preparation |
+| `trc-trusted-recovery` | Target: Transportation Research Part C | Ongoing |
+| `trd-charging-coverage` | Target: Transportation Research Part D | Ongoing |
+
+The four `trb-27-*` entries retain their accepted conference-version titles under Poster Presentations. They are distinct from the journal projects, including the project whose target is Part B. `cybercare-admm-2026` is an oral presentation at the CYBER-CARE Annual Symposium, April 13–15, 2026, Embry-Riddle Aeronautical University, Daytona Beach, Florida ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). No exact individual session date is asserted. `isets-2023` retains the verified generic “Presentation” designation; its oral format and individual presenter have not been established.
+
+Awards follow all research, presentation and experience sections.
 
 For example, after adding approved image files, an entry can use:
 
