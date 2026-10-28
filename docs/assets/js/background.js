@@ -6,12 +6,17 @@
   if (!element) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const roomyViewport = window.matchMedia('(min-width: 1200px)');
-  let effect = null;
+  const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'].map(position => {
+    const corner = document.createElement('div');
+    corner.className = `net-corner net-corner--${position}`;
+    element.append(corner);
+    return corner;
+  });
+  let effects = [];
 
   function destroy() {
-    if (!effect) return;
-    effect.destroy();
-    effect = null;
+    effects.forEach(effect => effect.destroy());
+    effects = [];
   }
 
   function syncEffect() {
@@ -19,28 +24,32 @@
       destroy();
       return;
     }
-    if (effect || !window.THREE || !window.VANTA?.NET) return;
+    if (effects.length || !window.THREE || !window.VANTA?.NET) return;
     try {
-      effect = window.VANTA.NET({
-        el: element,
-        THREE: window.THREE,
-        mouseControls: false,
-        touchControls: false,
-        gyroControls: false,
-        minHeight: 200,
-        minWidth: 200,
-        scale: 1,
-        scaleMobile: 1,
-        backgroundColor: 0xffffff,
-        color: 0xc8102e,
-        points: 8,
-        maxDistance: 20,
-        spacing: 22,
-        showDots: true
+      corners.forEach(corner => {
+        const effect = window.VANTA.NET({
+          el: corner,
+          THREE: window.THREE,
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 100,
+          minWidth: 80,
+          scale: 1,
+          scaleMobile: 1,
+          backgroundColor: 0xffffff,
+          color: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#960c22',
+          points: 3,
+          maxDistance: 28,
+          spacing: 24,
+          showDots: true
+        });
+        effects.push(effect);
+        // Slow the pinned NET effect's per-node drift; camera movement is disabled.
+        effect.points.forEach(point => { point.r *= .08; });
       });
-      // Slow the pinned NET effect's per-node drift; camera movement is disabled.
-      effect.points.forEach(point => { point.r *= .08; });
     } catch (error) {
+      destroy();
       // Keep the academic content usable when WebGL is unavailable.
       console.warn('The decorative network background could not start.', error);
     }
