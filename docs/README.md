@@ -24,7 +24,18 @@ Store approved images in `docs/assets/img/` and update `assets/data/media.json`.
 
 The `research` object has one entry for each published article, research project and presentation. Keep its IDs matched to the HTML `data-media-id` values. Set `src`, `alt`, and optional `caption`. The original thumbnail shadow, rounded corners and top-left `abbr.badge` are retained. `badge` controls the visible journal/conference label; `badgeTitle` supplies its full-name tooltip, including “Target” for unsubmitted projects. Clicking opens `href`, or the cover image when `href` is empty. Current project images open only the images; no private manuscript, slide deck or PDF is deployed.
 
-The eight selected covers are copied unchanged from the approved figures. The TR-B framework retains the credit “Icons by Magnific, Special Flat.” ([icon source](https://www.magnific.com/author/magnific/icons/special-flat_8)). The CYBER-CARE cover is the Houston subnetwork map embedded in the actual presentation. The six conference entries without verified version-specific artwork retain blank covers.
+All 14 current cards have approved covers. The TR-B journal framework retains the credit “Icons by Magnific, Special Flat.” ([icon source](https://www.magnific.com/author/magnific/icons/special-flat_8)). The requested PDF pages and PowerPoint slide are rendered whole, preserving their text, legends and existing source credits. TRB figures come from the identified conference submission versions, separately from the later journal manuscripts. Source PDFs and slide decks are not deployed or linked. The manifest is revalidated on load so updated covers do not remain hidden by a cached JSON file.
+
+| Entry | Selected source image |
+| --- | --- |
+| TR-D | Manuscript Figure 1, Seattle and Spokane study-window maps |
+| CYBER-CARE | Presentation PDF page 5, Houston METRO GTFS-calibrated subnetwork |
+| Xiamen / USS | `INTR Seminar.pdf`, page 17, spatial match examination |
+| Bangkok / ISETS | `Talk 10.18.pptx`, slide 8, retaining the Needell, Wei and Trancik (2023) credit |
+| TRBAM-27-01161 | Submission-system PDF page 9 / printed page 8, Figure 1 |
+| TRBAM-27-01159 | Submission-system PDF page 10 / printed page 9, Figure 3; rendered from the corresponding clean uploaded manuscript after matching the submitted text and diagram geometry |
+| TRBAM-27-01160 | Submission-system PDF page 7 / printed page 6, Figure 1 |
+| TRBAM-27-01162 | Submission-system PDF page 7 / printed page 6, Figure 2 |
 
 ## Research and presentation versions
 
@@ -39,7 +50,7 @@ Only the published Utilities Policy article appears under Publications. The Rese
 | `trc-trusted-recovery` | Target: Transportation Research Part C | Ongoing |
 | `trd-charging-coverage` | Target: Transportation Research Part D | Ongoing |
 
-The four `trb-27-*` entries retain their accepted conference-version titles under Poster Presentations. They are distinct from the journal projects, including the project whose target is Part B. `cybercare-admm-2026` is an oral presentation at the CYBER-CARE Annual Symposium, April 13–15, 2026, Embry-Riddle Aeronautical University, Daytona Beach, Florida ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). No exact individual session date is asserted. `isets-2023` retains the verified generic “Presentation” designation; its oral format and individual presenter have not been established.
+The four `trb-27-*` entries retain their accepted conference-version titles under Poster Presentations. They are distinct from the journal projects, including the project whose target is Part B. `cybercare-admm-2026` is an oral presentation at the CYBER-CARE Annual Symposium, April 13–15, 2026, Embry-Riddle Aeronautical University, Daytona Beach, Florida ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). No exact individual session date is asserted. `isets-2023` uses the owner-specified Bangkok talk deck for its cover.
 
 Awards follow all research, presentation and experience sections.
 
