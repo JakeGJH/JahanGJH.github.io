@@ -33,14 +33,11 @@
   }
 
   function researchImage(card, item) {
+    item = item && typeof item === "object" ? item : {};
     let container = card.querySelector(".pub-row .abbr.research-media") ||
       card.querySelector(".research-media");
-    const source = mediaURL(item?.src);
-    if (!source) {
-      if (container) container.hidden = true;
-      card.classList.remove("has-media");
-      return false;
-    }
+    const blankSource = new URL("assets/img/covers/blank-cover.svg", document.baseURI);
+    const source = mediaURL(item.src) || blankSource;
 
     // The restored template supplies this container; retain compatibility with
     // research/project cards that have not yet adopted the template row markup.
@@ -49,13 +46,13 @@
       container.className = "col-sm-3 abbr research-media";
       (card.querySelector(".pub-row") || card).prepend(container);
     }
-    container.hidden = true;
+    container.hidden = false;
     container.replaceChildren();
+    card.classList.add("has-media");
 
     const title = text(card.querySelector("h3, .title")?.textContent, "Research image");
-    // Hidden lazy images may never load. Request research thumbnails eagerly,
-    // then reveal only successful images so missing media never leaves a frame.
-    const { link, image } = linkedImage(item, source, title, "eager");
+    // Keep the cover in layout before a lazy request, including blank covers.
+    const { link, image } = linkedImage(item, source, title, "lazy");
     image.className = "teaser img-fluid z-depth-1";
     container.append(link);
     if (text(item.badge)) {
@@ -76,12 +73,18 @@
       card.classList.add("has-media");
       ready("image-load", { kind: "research", id: card.dataset.mediaId, success: true });
     }, { once: true });
+    let usingFallback = source.href === blankSource.href;
     image.addEventListener("error", () => {
-      container.hidden = true;
-      container.replaceChildren();
-      card.classList.remove("has-media");
-      ready("image-error", { kind: "research", id: card.dataset.mediaId, success: false });
-    }, { once: true });
+      // A failed blank asset must not trigger another fallback request.
+      if (!usingFallback) {
+        usingFallback = true;
+        link.href = blankSource.href;
+        image.src = blankSource.href;
+      }
+      ready("image-error", {
+        kind: "research", id: card.dataset.mediaId, success: false, fallback: true
+      });
+    });
     image.src = source.href;
     return true;
   }

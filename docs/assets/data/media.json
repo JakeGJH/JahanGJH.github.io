@@ -1,60 +1,116 @@
 {
   "research": {
     "utilities-policy-2026": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/utilities-policy-concepts.jpg",
+      "alt": "Interconnections among human-centered energy transition concepts",
       "caption": "",
       "href": "",
       "badge": "Utilities Policy",
       "badgeTitle": "Utilities Policy"
     },
     "trb-27-01161": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/blank-cover.svg",
+      "alt": "Blank cover reserved for this conference presentation",
       "caption": "",
       "href": "",
       "badge": "TRB",
       "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
     },
     "trb-27-01159": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/blank-cover.svg",
+      "alt": "Blank cover reserved for this conference presentation",
       "caption": "",
       "href": "",
       "badge": "TRB",
       "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
     },
     "trb-27-01160": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/blank-cover.svg",
+      "alt": "Blank cover reserved for this conference presentation",
       "caption": "",
       "href": "",
       "badge": "TRB",
       "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
     },
     "trb-27-01162": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/blank-cover.svg",
+      "alt": "Blank cover reserved for this conference presentation",
       "caption": "",
       "href": "",
       "badge": "TRB",
       "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
     },
     "uss-2023": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/blank-cover.svg",
+      "alt": "Blank cover reserved for this conference presentation",
       "caption": "",
       "href": "",
       "badge": "USS",
       "badgeTitle": "The 1st Urban Science and Sustainability Conference"
     },
     "isets-2023": {
-      "src": "",
-      "alt": "",
+      "src": "assets/img/covers/blank-cover.svg",
+      "alt": "Blank cover reserved for this conference presentation",
       "caption": "",
       "href": "",
       "badge": "ISETS",
       "badgeTitle": "The 1st International Society for Energy Transition Studies International Conference"
+    },
+    "tre-cyber-resilience": {
+      "src": "assets/img/covers/tre-review-framework.png",
+      "alt": "Analytical structure of the cyber-resilience review and links to its research questions",
+      "caption": "",
+      "href": "",
+      "badge": "TR-E",
+      "badgeTitle": "Transportation Research Part E: Logistics and Transportation Review"
+    },
+    "crime-beryl": {
+      "src": "assets/img/covers/crime-research-workflow.png",
+      "alt": "Research workflow for recorded offenses during Hurricane Beryl",
+      "caption": "",
+      "href": "",
+      "badge": "Applied Geography",
+      "badgeTitle": "Applied Geography"
+    },
+    "tra-campus-travel": {
+      "src": "assets/img/covers/tra-survey-framework.png",
+      "alt": "Survey eligibility and overlapping analytical samples in the campus travel study",
+      "caption": "",
+      "href": "",
+      "badge": "TR-A",
+      "badgeTitle": "Target: Transportation Research Part A: Policy and Practice"
+    },
+    "trb-priority-reversals": {
+      "src": "assets/img/covers/trb-restoration-framework.png",
+      "alt": "Temporary service, independent queues, and waiting-loss comparisons for transit restoration",
+      "caption": "Icons by Magnific, Special Flat.",
+      "href": "",
+      "badge": "TR-B",
+      "badgeTitle": "Target: Transportation Research Part B: Methodological"
+    },
+    "trc-trusted-recovery": {
+      "src": "assets/img/covers/trc-network-dependencies.png",
+      "alt": "Representative synthetic timetable and shared security dependencies",
+      "caption": "",
+      "href": "",
+      "badge": "TR-C",
+      "badgeTitle": "Target: Transportation Research Part C: Emerging Technologies"
+    },
+    "trd-charging-coverage": {
+      "src": "assets/img/covers/trd-coverage-framework.png",
+      "alt": "Conceptual distinction between charging-directory events and resident coverage outcomes",
+      "caption": "",
+      "href": "",
+      "badge": "TR-D",
+      "badgeTitle": "Target: Transportation Research Part D: Transport and Environment"
+    },
+    "cybercare-admm-2026": {
+      "src": "assets/img/covers/cybercare-houston-subnetwork.png",
+      "alt": "Houston METRO subnetwork shown in the CYBER-CARE ADMM oral presentation",
+      "caption": "",
+      "href": "",
+      "badge": "CYBER-CARE",
+      "badgeTitle": "CYBER-CARE Annual Symposium 2026"
     }
   },
   "life": []
