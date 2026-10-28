@@ -1,11 +1,16 @@
-/* Adapt the reference publication-card lift to the current research markup. */
+/* Preserve the reference list spacing and publication-card hover treatment. */
+.research-list {
+  display: grid;
+  row-gap: 24px;
+}
+
 .research-card {
   position: relative;
+  min-height: 110px;
+  margin-bottom: .5rem;
+  padding: 8px 6px;
   border-radius: 10px;
-  background: var(--surface, #fff);
-  outline: 1px solid transparent;
-  outline-offset: 7px;
-  transition: transform .22s ease, box-shadow .22s ease, outline-color .22s ease;
+  transition: background .22s ease, box-shadow .22s ease, transform .22s ease;
 }
 
 .research-card h3 a {
@@ -14,7 +19,7 @@
 }
 
 .research-card:focus-within {
-  outline-color: rgba(var(--accent-rgb), .22);
+  background: rgba(255, 255, 255, .85);
   box-shadow: 0 4px 18px rgba(var(--accent-rgb), .1);
 }
 
@@ -27,9 +32,9 @@
 /* Keep pointer hover off touch screens, where hover can otherwise persist. */
 @media (hover: hover) and (pointer: fine) {
   .research-card:hover {
+    background: rgba(255, 255, 255, .85);
+    box-shadow: 0 4px 18px rgba(var(--accent-rgb), .1);
     transform: translateY(-2px);
-    outline-color: rgba(var(--accent-rgb), .18);
-    box-shadow: 0 5px 18px rgba(var(--accent-rgb), .12);
   }
 
   .research-card:hover h3 a,
@@ -43,6 +48,20 @@
   }
 }
 
+/* The original template's fixed, three-pixel reading progress bar. */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-hover), var(--accent));
+  z-index: 9999;
+  border-radius: 0 2px 2px 0;
+  transition: width .08s linear;
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .research-card,
   .research-card:hover,
@@ -51,5 +70,6 @@
     transition: none;
   }
 
-  .research-card a { transition: none; }
+  .research-card a,
+  #scroll-progress { transition: none; }
 }
