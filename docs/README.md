@@ -26,7 +26,7 @@ Store approved images in `docs/assets/img/` and update `assets/data/media.json`.
 
 The `research` object has one entry for each public article, project and presentation. Keep its IDs matched to the HTML `data-media-id` values. Set `src`, `alt`, and optional `caption`. The original thumbnail shadow, rounded corners and top-left `abbr.badge` are retained. `badge` controls the visible venue or manuscript label; `badgeTitle` supplies its tooltip without a default abbreviation underline. Under-review manuscripts omit the journal identity from text, badges and resource names. Unsubmitted projects retain their titles, status and covers but omit target-journal text and badges. Clicking opens `href`, or the cover image when `href` is empty. Images open only the images; no private manuscript, slide deck or PDF is deployed.
 
-All 14 current cards have approved covers. The restoration framework retains the credit “Icons by Magnific, Special Flat.” ([icon source](https://www.magnific.com/author/magnific/icons/special-flat_8)). The requested PDF pages and PowerPoint slide are rendered whole, preserving their text, legends and existing source credits. TRB figures come from the identified conference submission versions. Source PDFs and slide decks are not deployed or linked. The manifest is revalidated on load so updated covers do not remain hidden by a cached JSON file.
+All 14 current cards have approved covers. Icon attribution for the restoration artwork is recorded here: [Magnific, Special Flat](https://www.magnific.com/author/magnific/icons/special-flat_8); it is not displayed as a cover caption. The requested PDF pages and PowerPoint slide are rendered whole, preserving their text, legends and existing source credits. TRB figures come from the identified conference submission versions. Source PDFs and slide decks are not deployed or linked. The manifest is revalidated on load so updated covers do not remain hidden by a cached JSON file.
 
 | Entry | Selected source image |
 | --- | --- |
@@ -52,9 +52,9 @@ Only the published Utilities Policy article appears under Publications. The Rese
 | `trc-trusted-recovery` | Research project | Ongoing |
 | `trd-charging-coverage` | Research project | Ongoing |
 
-The four `trb-27-*` entries retain their accepted conference-version titles under Poster Presentations. `cybercare-admm-2026` is an oral presentation at the CYBER-CARE Annual Symposium, April 13–15, 2026, Embry-Riddle Aeronautical University, Daytona Beach, Florida ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). No exact individual session date is asserted. `isets-2023` uses the owner-specified Bangkok talk deck for its cover.
+Presentations is one section with Poster and Oral subheadings. The four `trb-27-*` entries retain their accepted conference-version titles and author order verified against the submission-system title pages. All author rows use initials before the family name, consistently highlighting `J. Gao`; existing coauthor order for Xiamen and Bangkok follows the owner's original conference record. The oral entries use compact conference, institution where applicable, year and city lines. `cybercare-admm-2026` refers to the CYBER-CARE Annual Symposium at Embry-Riddle Aeronautical University, 2026, Daytona Beach, FL ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). `isets-2023` uses the owner-specified Bangkok talk deck for its cover. The legacy `#posters` and `#conferences` anchors remain on the subheadings.
 
-Awards follow all research, presentation and experience sections.
+Awards follow all research, presentation and experience sections. Experience and Training and Selected Awards use the same bullet list, text indent and item spacing.
 
 For example, after adding approved image files, an entry can use:
 
