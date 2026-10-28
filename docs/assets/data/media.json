@@ -1,12 +1,61 @@
 {
   "research": {
-    "utilities-policy-2026": { "src": "", "alt": "", "caption": "" },
-    "trb-27-01161": { "src": "", "alt": "", "caption": "" },
-    "trb-27-01159": { "src": "", "alt": "", "caption": "" },
-    "trb-27-01160": { "src": "", "alt": "", "caption": "" },
-    "trb-27-01162": { "src": "", "alt": "", "caption": "" },
-    "uss-2023": { "src": "", "alt": "", "caption": "" },
-    "isets-2023": { "src": "", "alt": "", "caption": "" }
+    "utilities-policy-2026": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "Utilities Policy",
+      "badgeTitle": "Utilities Policy"
+    },
+    "trb-27-01161": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "TRB",
+      "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
+    },
+    "trb-27-01159": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "TRB",
+      "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
+    },
+    "trb-27-01160": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "TRB",
+      "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
+    },
+    "trb-27-01162": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "TRB",
+      "badgeTitle": "106th Transportation Research Board (TRB) Annual Meeting"
+    },
+    "uss-2023": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "USS",
+      "badgeTitle": "The 1st Urban Science and Sustainability Conference"
+    },
+    "isets-2023": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "href": "",
+      "badge": "ISETS",
+      "badgeTitle": "The 1st International Society for Energy Transition Studies International Conference"
+    }
   },
   "life": []
 }

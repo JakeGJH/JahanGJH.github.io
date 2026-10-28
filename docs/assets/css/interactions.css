@@ -13,18 +13,13 @@
   transition: background .22s ease, box-shadow .22s ease, transform .22s ease;
 }
 
-.research-card h3 a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: .16em;
-}
-
 .research-card:focus-within {
   background: rgba(255, 255, 255, .85);
   box-shadow: 0 4px 18px rgba(var(--accent-rgb), .1);
 }
 
-.research-card h3 a:focus-visible,
-.research-card .research-link:focus-visible {
+.research-card .title a:focus-visible,
+.research-card .links a.btn:focus-visible {
   color: var(--accent-hover);
   text-decoration-line: underline;
 }
@@ -35,12 +30,6 @@
     background: rgba(255, 255, 255, .85);
     box-shadow: 0 4px 18px rgba(var(--accent-rgb), .1);
     transform: translateY(-2px);
-  }
-
-  .research-card:hover h3 a,
-  .research-card .research-link:hover {
-    color: var(--accent-hover);
-    text-decoration-line: underline;
   }
 
   .research-card:focus-within {

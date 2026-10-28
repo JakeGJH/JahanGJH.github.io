@@ -18,11 +18,13 @@
   <link rel="stylesheet" href="assets/css/template-extras.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/interactions.css">
+  <link rel="stylesheet" href="assets/css/life.css">
   <script src="assets/vendor/three-r134.min.js" defer></script>
   <script src="assets/vendor/vanta-net-0.5.24.min.js" defer></script>
   <script src="assets/js/background.js" defer></script>
   <script src="assets/js/media.js" defer></script>
   <script src="assets/js/progress.js" defer></script>
+  <script src="assets/js/life.js" defer></script>
 </head>
 <body>
   <div id="scroll-progress" aria-hidden="true"></div>
@@ -59,20 +61,49 @@
       </div>
     </header>
     <section id="main-content">
-      <h2>Beyond Research</h2>
-      <p>Outside research, I enjoy ultimate frisbee, hiking, cycling, and dancing.</p>
-      <div id="life-gallery" class="life-gallery" hidden></div>
-      <h2>Ultimate Frisbee</h2>
-      <p>I served as president of the Ultimate Frisbee Club at The Hong Kong University of Science and Technology (Guangzhou), helping organize training, competitions, and campus activities.</p>
-      <p>Previously, I was a member of Zhejiang University's Ultimate Frisbee Team from 2021 to 2023.</p>
-      <h2>Community and Creative Work</h2>
-      <p>I enjoy photography, visual design, and contributing to student community activities. At Zhejiang University, I served in the Visual Creative Workshop of the Student Green Source Association.</p>
-      <h2>Campus Activities</h2><p>I also supported photography, video editing, and event communications for a university ceremonial team.</p>
-      <h2>Get in Touch</h2>
-      <p><a href="mailto:jgao30@cougarnet.uh.edu">jgao30@cougarnet.uh.edu</a></p>
-      <p><a href="./">&larr; Back to the academic homepage</a></p>
-      <p class="theme-credit"><small>Based on <a href="https://github.com/Hanchao-Zhang/Hanchao-Zhang.github.io">Hanchao Zhang's homepage</a> and the <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a> theme.</small></p>
+      <div class="beyond">
+        <div class="life-hero">
+          <span class="life-hero-bar" aria-hidden="true"></span>
+          <div><span class="life-eyebrow">a little beyond research</span><h1>Beyond Research</h1></div>
+        </div>
+        <p class="life-lede">Outside research, I enjoy ultimate frisbee, hiking, cycling, and dancing.</p>
+        <div id="life-gallery" class="life-gallery life-grid" data-life-gallery="general" hidden></div>
+
+        <div class="life-section">
+          <div class="life-section-heading life-reveal"><h2 class="life-section-title" id="ultimate-frisbee">Ultimate Frisbee</h2></div>
+          <p class="life-section-intro life-reveal">I served as president of the Ultimate Frisbee Club at The Hong Kong University of Science and Technology (Guangzhou), helping organize training, competitions, and campus activities. Previously, I was a member of Zhejiang University's Ultimate Frisbee Team from 2021 to 2023.</p>
+          <div class="life-gallery life-grid" data-life-gallery="frisbee" hidden></div>
+        </div>
+
+        <div class="life-section">
+          <div class="life-section-heading life-reveal"><h2 class="life-section-title" id="outdoors">Outdoors and Movement</h2></div>
+          <p class="life-section-intro life-reveal">Hiking, cycling, and dancing.</p>
+          <div class="life-gallery life-grid" data-life-gallery="outdoors" hidden></div>
+        </div>
+
+        <div class="life-section">
+          <div class="life-section-heading life-reveal"><h2 class="life-section-title" id="creative-work">Community and Creative Work</h2></div>
+          <p class="life-section-intro life-reveal">I enjoy photography, visual design, and contributing to student community activities. At Zhejiang University, I served in the Visual Creative Workshop of the Student Green Source Association.</p>
+          <div class="life-gallery life-grid" data-life-gallery="creative" hidden></div>
+        </div>
+
+        <div class="life-section">
+          <div class="life-section-heading life-reveal"><h2 class="life-section-title" id="campus-activities">Campus Activities</h2></div>
+          <p class="life-section-intro life-reveal">I also supported photography, video editing, and event communications for a university ceremonial team.</p>
+        </div>
+
+        <div class="life-section-heading life-reveal"><h2 class="life-section-title" id="get-in-touch">Get in Touch</h2></div>
+        <p><a href="mailto:jgao30@cougarnet.uh.edu">jgao30@cougarnet.uh.edu</a></p>
+        <p><a href="./">&larr; Back to the academic homepage</a></p>
+        <p class="theme-credit"><small>Based on <a href="https://github.com/Hanchao-Zhang/Hanchao-Zhang.github.io">Hanchao Zhang's homepage</a> and the <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a> theme.</small></p>
+      </div>
     </section>
+  </div>
+  <div class="life-lightbox" id="life-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photograph" hidden>
+    <button class="life-lightbox-close" id="life-lightbox-close" type="button" aria-label="Close photograph">&times;</button>
+    <img id="life-lightbox-image" alt="">
+    <div class="life-lightbox-caption" id="life-lightbox-caption" hidden></div>
+    <p class="life-lightbox-error" id="life-lightbox-error" role="status" hidden>This image could not be loaded.</p>
   </div>
 </body>
 </html>
