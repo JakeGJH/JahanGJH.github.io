@@ -15,7 +15,13 @@
   let effects = [];
 
   function destroy() {
-    effects.forEach(effect => effect.destroy());
+    effects.forEach(effect => {
+      const renderer = effect.renderer;
+      effect.destroy();
+      // Vanta 0.5.24 removes the canvas but leaves context release to the caller.
+      renderer?.dispose();
+      renderer?.forceContextLoss();
+    });
     effects = [];
   }
 
