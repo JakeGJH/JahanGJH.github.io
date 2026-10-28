@@ -5,9 +5,11 @@ This static edition adapts Hanchao Zhang's homepage and the Minimal Light theme.
 - Update biography, education, experience, awards, papers, and links in `index.html`.
 - Update personal activities in `life.html`.
 - Personal styling is in `assets/css/site.css`; template styles retain their provenance.
+- Both profile rows link to Google Scholar, ResearchGate and LinkedIn. The Scholar icon uses the same pinned Academicons stylesheet as the reference template.
 - Research cards follow the reference template's 10px rounded corners, 8px/6px internal padding, 2px hover lift and soft shadow. Card spacing reserves the original list margin and line-break gap without external outlines. `assets/js/progress.js` restores the 3px reading progress bar; both details retain keyboard and reduced-motion handling where applicable.
 - The main accent is official UH Brick `#960C22`, with Chocolate `#640817` for hover states and gradients. The name shimmers only between these dark reds. The background stays white. Semantic CSS variables cover links, gradients, buttons, surfaces, and shadows.
 - The background uses the original pinned Vanta NET renderer and default node layout, with one continuous full-window field. A narrower CSS ellipse with an eased transparent fade expands the visible side regions; layouts at 960px and below show a roughly 0.5cm strip at each screen edge. There are no fixed fragments, cloned views, custom render passes, or modified node motion. Mouse camera coefficients remain 0.25 horizontally and 0.20 vertically. The effect respects reduced-motion preferences and pauses in hidden tabs. Three.js r134 and Vanta 0.5.24 are vendored with their MIT licenses.
+- At phone widths of 600px and below, horizontal gutters grow to `clamp(26px, 7.5vw, 36px)` and the NET strips fade out at those gutters. Wider layouts retain their existing dimensions and NET mask.
 - Faint industrial engineering watermarks include linear and binary optimization, Little's law, the Lagrangian, and a nonnegative queue recursion. They are decorative formulas, independent of the listed research results.
 - The favicon is the unmodified official Interlocking UH mark from `https://www.uh.edu/brand/_img/uh_red.png`.
 - The original repository content and history are preserved outside `docs/`. Publish only `docs/` so inherited third-party CVs and PDFs are not deployed with the new site.
@@ -22,13 +24,13 @@ If a whole-domain Google Search Console removal was submitted, cancel it once th
 
 Store approved images in `docs/assets/img/` and update `assets/data/media.json`. Text remains in the HTML, so papers, research and presentations remain readable without JavaScript. Research covers use a uniform 16:10 frame with `object-fit: contain`, preserving the whole figure. Missing or failed research images use `assets/img/covers/blank-cover.svg`; the frame and venue badge remain available for later replacement. Images load lazily after their containers enter layout.
 
-The `research` object has one entry for each published article, research project and presentation. Keep its IDs matched to the HTML `data-media-id` values. Set `src`, `alt`, and optional `caption`. The original thumbnail shadow, rounded corners and top-left `abbr.badge` are retained. `badge` controls the visible journal/conference label; `badgeTitle` supplies its full-name tooltip, including “Target” for unsubmitted projects. Clicking opens `href`, or the cover image when `href` is empty. Current project images open only the images; no private manuscript, slide deck or PDF is deployed.
+The `research` object has one entry for each public article, project and presentation. Keep its IDs matched to the HTML `data-media-id` values. Set `src`, `alt`, and optional `caption`. The original thumbnail shadow, rounded corners and top-left `abbr.badge` are retained. `badge` controls the visible venue or manuscript label; `badgeTitle` supplies its tooltip without a default abbreviation underline. Under-review manuscripts omit the journal identity from text, badges and resource names. Unsubmitted projects retain their titles, status and covers but omit target-journal text and badges. Clicking opens `href`, or the cover image when `href` is empty. Images open only the images; no private manuscript, slide deck or PDF is deployed.
 
-All 14 current cards have approved covers. The TR-B journal framework retains the credit “Icons by Magnific, Special Flat.” ([icon source](https://www.magnific.com/author/magnific/icons/special-flat_8)). The requested PDF pages and PowerPoint slide are rendered whole, preserving their text, legends and existing source credits. TRB figures come from the identified conference submission versions, separately from the later journal manuscripts. Source PDFs and slide decks are not deployed or linked. The manifest is revalidated on load so updated covers do not remain hidden by a cached JSON file.
+All 14 current cards have approved covers. The restoration framework retains the credit “Icons by Magnific, Special Flat.” ([icon source](https://www.magnific.com/author/magnific/icons/special-flat_8)). The requested PDF pages and PowerPoint slide are rendered whole, preserving their text, legends and existing source credits. TRB figures come from the identified conference submission versions. Source PDFs and slide decks are not deployed or linked. The manifest is revalidated on load so updated covers do not remain hidden by a cached JSON file.
 
 | Entry | Selected source image |
 | --- | --- |
-| TR-D | Manuscript Figure 1, Seattle and Spokane study-window maps |
+| Charging coverage project | Manuscript Figure 1, Seattle and Spokane study-window maps |
 | CYBER-CARE | Presentation PDF page 5, Houston METRO GTFS-calibrated subnetwork |
 | Xiamen / USS | `INTR Seminar.pdf`, page 17, spatial match examination |
 | Bangkok / ISETS | `Talk 10.18.pptx`, slide 8, retaining the Needell, Wei and Trancik (2023) credit |
@@ -39,18 +41,18 @@ All 14 current cards have approved covers. The TR-B journal framework retains th
 
 ## Research and presentation versions
 
-Only the published Utilities Policy article appears under Publications. The Research section contains journal manuscripts and ongoing projects, with statuses confirmed by the owner on October 28, 2026:
+Only the published Utilities Policy article appears under Publications. The Research section contains submitted manuscripts and ongoing projects, with visibility confirmed by the owner on October 28, 2026:
 
-| ID | Journal or target | Status |
+| ID | Public label | Status |
 | --- | --- | --- |
-| `tre-cyber-resilience` | Transportation Research Part E | Under review |
+| `cyber-resilience-review` | Journal manuscript | Under review |
 | `crime-beryl` | Applied Geography | Submitted after revision |
-| `tra-campus-travel` | Target: Transportation Research Part A | In final preparation |
-| `trb-priority-reversals` | Target: Transportation Research Part B | In final preparation |
-| `trc-trusted-recovery` | Target: Transportation Research Part C | Ongoing |
-| `trd-charging-coverage` | Target: Transportation Research Part D | Ongoing |
+| `tra-campus-travel` | Research project | In final preparation |
+| `trb-priority-reversals` | Research project | In final preparation |
+| `trc-trusted-recovery` | Research project | Ongoing |
+| `trd-charging-coverage` | Research project | Ongoing |
 
-The four `trb-27-*` entries retain their accepted conference-version titles under Poster Presentations. They are distinct from the journal projects, including the project whose target is Part B. `cybercare-admm-2026` is an oral presentation at the CYBER-CARE Annual Symposium, April 13–15, 2026, Embry-Riddle Aeronautical University, Daytona Beach, Florida ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). No exact individual session date is asserted. `isets-2023` uses the owner-specified Bangkok talk deck for its cover.
+The four `trb-27-*` entries retain their accepted conference-version titles under Poster Presentations. `cybercare-admm-2026` is an oral presentation at the CYBER-CARE Annual Symposium, April 13–15, 2026, Embry-Riddle Aeronautical University, Daytona Beach, Florida ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). No exact individual session date is asserted. `isets-2023` uses the owner-specified Bangkok talk deck for its cover.
 
 Awards follow all research, presentation and experience sections.
 

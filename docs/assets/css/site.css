@@ -63,6 +63,7 @@ header p { margin: 10px 0; }
 header .email { font-size: 14px; font-family: "Ubuntu Mono", monospace; color: #6d6d6d; overflow-wrap: anywhere; }
 .institution-link { color: var(--accent); }
 .social-icons { margin: 18px 0 8px; }
+.social-icons .ai { font-size: 1.2rem; }
 .social-icons a { color: var(--accent) !important; }
 .social-icons a:hover { color: var(--accent-hover) !important; }
 .section-nav { font-size: .85rem; margin: 8px 0 18px; }
@@ -93,6 +94,22 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
   .stats-watermark { display: none; }
 }
 @media (max-width: 600px) {
+  :root { --mobile-gutter: clamp(26px, 7.5vw, 36px); }
+  body { padding-inline: var(--mobile-gutter); }
+  #vanta-bg {
+    --net-mask: linear-gradient(90deg,
+      #000 calc(var(--mobile-gutter) - 10px),
+      rgba(0, 0, 0, .896) calc(var(--mobile-gutter) - 8px),
+      rgba(0, 0, 0, .648) calc(var(--mobile-gutter) - 6px),
+      rgba(0, 0, 0, .352) calc(var(--mobile-gutter) - 4px),
+      rgba(0, 0, 0, .104) calc(var(--mobile-gutter) - 2px),
+      transparent var(--mobile-gutter), transparent calc(100% - var(--mobile-gutter)),
+      rgba(0, 0, 0, .104) calc(100% - var(--mobile-gutter) + 2px),
+      rgba(0, 0, 0, .352) calc(100% - var(--mobile-gutter) + 4px),
+      rgba(0, 0, 0, .648) calc(100% - var(--mobile-gutter) + 6px),
+      rgba(0, 0, 0, .896) calc(100% - var(--mobile-gutter) + 8px),
+      #000 calc(100% - var(--mobile-gutter) + 10px));
+  }
   .container-flex { gap: 20px; }
 }
 @media (max-width: 600px) {

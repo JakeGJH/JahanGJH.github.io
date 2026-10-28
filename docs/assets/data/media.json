@@ -56,14 +56,6 @@
       "badge": "ISETS",
       "badgeTitle": "The 1st International Society for Energy Transition Studies International Conference"
     },
-    "tre-cyber-resilience": {
-      "src": "assets/img/covers/tre-review-framework.png",
-      "alt": "Analytical structure of the cyber-resilience review and links to its research questions",
-      "caption": "",
-      "href": "",
-      "badge": "TR-E",
-      "badgeTitle": "Transportation Research Part E: Logistics and Transportation Review"
-    },
     "crime-beryl": {
       "src": "assets/img/covers/crime-research-workflow.png",
       "alt": "Research workflow for recorded offenses during Hurricane Beryl",
@@ -72,38 +64,6 @@
       "badge": "Applied Geography",
       "badgeTitle": "Applied Geography"
     },
-    "tra-campus-travel": {
-      "src": "assets/img/covers/tra-survey-framework.png",
-      "alt": "Survey eligibility and overlapping analytical samples in the campus travel study",
-      "caption": "",
-      "href": "",
-      "badge": "TR-A",
-      "badgeTitle": "Target: Transportation Research Part A: Policy and Practice"
-    },
-    "trb-priority-reversals": {
-      "src": "assets/img/covers/trb-restoration-framework.png",
-      "alt": "Temporary service, independent queues, and waiting-loss comparisons for transit restoration",
-      "caption": "Icons by Magnific, Special Flat.",
-      "href": "",
-      "badge": "TR-B",
-      "badgeTitle": "Target: Transportation Research Part B: Methodological"
-    },
-    "trc-trusted-recovery": {
-      "src": "assets/img/covers/trc-network-dependencies.png",
-      "alt": "Representative synthetic timetable and shared security dependencies",
-      "caption": "",
-      "href": "",
-      "badge": "TR-C",
-      "badgeTitle": "Target: Transportation Research Part C: Emerging Technologies"
-    },
-    "trd-charging-coverage": {
-      "src": "assets/img/covers/trd-study-window-map.png",
-      "alt": "Study-window maps of Seattle and Spokane, Figure 1 from the TR-D manuscript PDF",
-      "caption": "",
-      "href": "",
-      "badge": "TR-D",
-      "badgeTitle": "Target: Transportation Research Part D: Transport and Environment"
-    },
     "cybercare-admm-2026": {
       "src": "assets/img/covers/cybercare-pdf-page-5.png",
       "alt": "Page 5 of the CYBER-CARE presentation: Houston METRO GTFS-calibrated subnetwork",
@@ -111,6 +71,46 @@
       "href": "",
       "badge": "CYBER-CARE",
       "badgeTitle": "CYBER-CARE Annual Symposium 2026"
+    },
+    "cyber-resilience-review": {
+      "src": "assets/img/covers/cyber-resilience-review.png",
+      "alt": "Analytical structure of the cyber-resilience review and links to its research questions",
+      "caption": "",
+      "href": "",
+      "badge": "Manuscript",
+      "badgeTitle": "Manuscript under review"
+    },
+    "tra-campus-travel": {
+      "src": "assets/img/covers/tra-survey-framework.png",
+      "alt": "Survey eligibility and overlapping analytical samples in the campus travel study",
+      "caption": "",
+      "href": "",
+      "badge": "",
+      "badgeTitle": ""
+    },
+    "trb-priority-reversals": {
+      "src": "assets/img/covers/trb-restoration-framework.png",
+      "alt": "Temporary service, independent queues, and waiting-loss comparisons for transit restoration",
+      "caption": "Icons by Magnific, Special Flat.",
+      "href": "",
+      "badge": "",
+      "badgeTitle": ""
+    },
+    "trc-trusted-recovery": {
+      "src": "assets/img/covers/trc-network-dependencies.png",
+      "alt": "Representative synthetic timetable and shared security dependencies",
+      "caption": "",
+      "href": "",
+      "badge": "",
+      "badgeTitle": ""
+    },
+    "trd-charging-coverage": {
+      "src": "assets/img/covers/trd-study-window-map.png",
+      "alt": "Study-window maps of Seattle and Spokane, Figure 1 from the TR-D manuscript PDF",
+      "caption": "",
+      "href": "",
+      "badge": "",
+      "badgeTitle": ""
     }
   },
   "life": []
