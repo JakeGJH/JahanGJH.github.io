@@ -24,30 +24,17 @@ a { color: var(--accent); }
 a:hover { color: var(--accent-hover); }
 strong, section h2 { color: var(--text); }
 #vanta-bg {
-  --gutter: max(0px, calc((100vw - 960px) / 2));
-  --side-width: min(150px, calc(var(--gutter) - 24px));
-  --corner-width: min(140px, 9vw, calc(var(--gutter) - 24px));
-  --corner-inset: max(12px, calc(var(--gutter) - var(--corner-width) - 12px));
   position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
   background: #ffffff;
+  /* One continuous NET field; only its central reading ellipse is masked. */
+  -webkit-mask-image: radial-gradient(ellipse 46vw 80vh at 50% 50%, transparent 100%, #000 115%);
+  mask-image: radial-gradient(ellipse 46vw 80vh at 50% 50%, transparent 100%, #000 115%);
 }
-/* Eight soft fragments frame the page; the shared canvas also excludes reading areas. */
-.net-region { position: absolute; width: var(--corner-width); height: min(190px, 26vh); }
-.net-region--top-left { top: 24px; left: var(--corner-inset); }
-.net-region--top-right { top: 24px; right: var(--corner-inset); }
-.net-region--bottom-left { bottom: 24px; left: var(--corner-inset); }
-.net-region--bottom-right { bottom: 24px; right: var(--corner-inset); }
-.net-region--left, .net-region--right { top: 50%; width: var(--side-width); height: min(170px, 24vh); transform: translateY(-50%); }
-.net-region--left { left: 12px; }
-.net-region--right { right: 12px; }
-.net-region--top, .net-region--bottom { left: 50%; width: 210px; height: 76px; transform: translateX(-50%); }
-.net-region--top { top: 0; }
-.net-region--bottom { bottom: 0; }
-#vanta-bg canvas { display: block; opacity: .7; }
+#vanta-bg canvas { display: block; opacity: .65; }
 @media (max-width: 1199px) {
   #vanta-bg { display: none; }
 }
@@ -74,9 +61,7 @@ header .email { font-size: .9rem; overflow-wrap: anywhere; }
 .edu-list li, .research-interests ul li { background: rgba(var(--accent-rgb), .045); }
 .edu-list li.l1 { background: rgba(var(--accent-rgb), .075); }
 .research-list { list-style: none; margin: 0; padding: 0; }
-.research-card { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-.research-card:first-child { padding-top: 4px; }
-.research-card:last-child { border-bottom: 0; }
+.research-card { display: flex; align-items: flex-start; gap: 20px; }
 .research-copy { flex: 1; min-width: 0; }
 .research-card h3 { margin: 0 0 7px; font-size: 1.12rem; line-height: 1.35; }
 .research-card p { margin: 6px 0; }
