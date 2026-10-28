@@ -5,7 +5,6 @@
   const element = document.getElementById('vanta-bg');
   if (!element) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const roomyViewport = window.matchMedia('(min-width: 1200px)');
   let effect = null;
 
   function destroy() {
@@ -18,7 +17,7 @@
   }
 
   function syncEffect() {
-    if (document.hidden || reducedMotion.matches || !roomyViewport.matches) {
+    if (document.hidden || reducedMotion.matches) {
       destroy();
       return;
     }
@@ -47,7 +46,6 @@
 
   document.addEventListener('visibilitychange', syncEffect);
   reducedMotion.addEventListener('change', syncEffect);
-  roomyViewport.addEventListener('change', syncEffect);
   window.addEventListener('pagehide', destroy);
   window.addEventListener('pageshow', syncEffect);
   syncEffect();
