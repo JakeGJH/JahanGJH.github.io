@@ -54,7 +54,7 @@ Only the published Utilities Policy article appears under Publications. The Rese
 
 Presentations is one section with Poster and Oral subheadings. The four `trb-27-*` entries retain their accepted conference-version titles and author order verified against the submission-system title pages. All author rows use initials before the family name, consistently highlighting `J. Gao`; existing coauthor order for Xiamen and Bangkok follows the owner's original conference record. The oral entries use compact conference, institution where applicable, year and city lines. `cybercare-admm-2026` refers to the CYBER-CARE Annual Symposium at Embry-Riddle Aeronautical University, 2026, Daytona Beach, FL ([official event notice](https://www.uh.edu/cybercare/newsevents/cybercare-symposium-2025/2026cybercare-symposium.pdf)). `isets-2023` uses the owner-specified Bangkok talk deck for its cover. The legacy `#posters` and `#conferences` anchors remain on the subheadings.
 
-Awards follow all research, presentation and experience sections. Experience and Training and Selected Awards use the same bullet list, text indent and item spacing.
+Awards follow all research, presentation and experience sections. Experience and Training and Selected Awards use the same bullet list, text indent and item spacing, with bold bracketed date prefixes and italic entry names following the reference award format. Keep month abbreviations only where a month is known; year-only records remain year-only. Education dates and bibliographic years retain their template-specific formatting. Poster and Oral subheadings use a subtle rounded label and fading divider while keeping both groups fully visible.
 
 For example, after adding approved image files, an entry can use:
 
