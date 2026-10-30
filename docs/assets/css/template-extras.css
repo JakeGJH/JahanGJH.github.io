@@ -249,7 +249,7 @@
     left: 0;
     height: 3px;
     width: 0%;
-    background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+    background: linear-gradient(90deg, var(--accent), #cb8691);
     z-index: 9999;
     border-radius: 0 2px 2px 0;
     transition: width 0.08s linear;
